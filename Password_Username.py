@@ -1,4 +1,5 @@
 import time
+from getpass import getpass
 
 loopi = True
 
@@ -122,7 +123,7 @@ while loopi is True:
         username = input("Username: ")
         print("\n ")
         print("(Your password will be encrypted after you make an account and until you want it to be decrypted)")
-        password = input("Password: \u001b[0m")
+        password = getpass("Password: \u001b[0m")
         if username in user_list and bool(user_list) is True:
             print("\u001b[31mUsername already taken\u001b[0m")
             repeat_acc = True
@@ -189,7 +190,7 @@ while loopi is True:
                         elif Task_security_lower == "change password" or Task_security_lower == "changepassword" and back_security is True:
                             print("To carry this function out, you will need to enter your account information")
                             user_check_change = input("\u001b[37mUsername: ")
-                            pass_check_change = input("Password: \u001b[0m")
+                            pass_check_change = getpass("Password: \u001b[0m")
                             if user_check_change in user_list and user_list.get(user_check_change) == pass_check_change:
                                 print(x)
                                 password_new = input("\u001b[37mWhat would you like to change your password to? \u001b[0m")
@@ -209,7 +210,7 @@ while loopi is True:
                         elif Task_security_lower == "decrypt":
                             print("To carry this function out, you will need to enter your account information")
                             user_check = input("\u001b[37mUsername: ")
-                            pass_check = input("Password: \u001b[0m")
+                            pass_check = getpass("Password: \u001b[0m")
                             if user_check in user_list and user_list.get(user_check) == pass_check:
                                 loop_dec = True
                                 break
@@ -242,7 +243,7 @@ while loopi is True:
                         pass_check_change = input("Password: \u001b[0m")
                         if user_check_change in user_list and user_list.get(user_check_change) == pass_check_change:
                             print(x)
-                            password_new = input("\u001b[37mWhat would you like to change your password to? \u001b[0m")
+                            password_new = getpass("\u001b[37mWhat would you like to change your password to? \u001b[0m")
                             if password_new not in user_list.values():
                                 change_password(user_list)
                                 password = password_new
@@ -285,7 +286,7 @@ while loopi is True:
         username_ask = input("\u001b[37mUsername: ")
         print("\n ")
         print("(Your password will be encrypted after you make an account and until you want it to be decrypted)")
-        password_ask = input("Password: \u001b[0m")
+        password_ask = getpass("Password: \u001b[0m")
         encrypted_username = pass_encryption(username_ask)
         encrypted_password = pass_encryption(password_ask)
         if user_list.get(username_ask) == password_ask:
@@ -342,10 +343,10 @@ while loopi is True:
                         elif Task_security_lower == "change password" or Task_security_lower == "changepassword" and back_security is True:
                             print("To carry this function out, you will need to enter your account information")
                             user_check_change = input("\u001b[37mUsername: ")
-                            pass_check_change = input("Password: \u001b[0m")
+                            pass_check_change = getpass("Password: \u001b[0m")
                             if user_check_change in user_list and user_list.get(user_check_change) == pass_check_change:
                                 print(x)
-                                password_new = input("\u001b[37mWhat would you like to change your password to? \u001b[0m")
+                                password_new = getpass("\u001b[37mWhat would you like to change your password to? \u001b[0m")
                                 if password_new not in user_list.values():
                                     change_password_l(user_list)
                                     password_ask = password_new
@@ -361,7 +362,7 @@ while loopi is True:
                         elif Task_security_lower == "decrypt":
                             print("To carry this function out, you will need to enter your account information")
                             user_check = input("\u001b[37mUsername: ")
-                            pass_check = input("Password: \u001b[0m")
+                            pass_check = getpass("Password: \u001b[0m")
                             if user_check in user_list and user_list.get(user_check) == pass_check:
                                 loop_dec = True
                                 break
@@ -391,10 +392,10 @@ while loopi is True:
                     elif Task_security_lower == "change password" or Task_security_lower == "changepassword" and back_security is True:
                         print("To carry this function out, you will need to enter your account information")
                         user_check_change = input("\u001b[37mUsername: ")
-                        pass_check_change = input("Password: \u001b[0m")
+                        pass_check_change = getpass("Password: \u001b[0m")
                         if user_check_change in user_list and user_list.get(user_check_change) == pass_check_change:
                             print(x)
-                            password_new = input("\u001b[37mWhat would you like to change your password to? \u001b[0m")
+                            password_new = getpass("\u001b[37mWhat would you like to change your password to? \u001b[0m")
                             if password_new in user_list.values():
                                 print("\u001b[31mWeak password. Try a different one.\u001b[0m")
                                 time.sleep(2)
