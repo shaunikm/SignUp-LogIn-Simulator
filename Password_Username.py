@@ -240,7 +240,7 @@ while loopi is True:
                     elif Task_security_lower == "change password" or Task_security_lower == "changepassword" and back_security is True:
                         print("To carry this function out, you will need to enter your account information")
                         user_check_change = input("\u001b[37mUsername: ")
-                        pass_check_change = input("Password: \u001b[0m")
+                        pass_check_change = getpass("Password: \u001b[0m")
                         if user_check_change in user_list and user_list.get(user_check_change) == pass_check_change:
                             print(x)
                             password_new = getpass("\u001b[37mWhat would you like to change your password to? \u001b[0m")
@@ -286,7 +286,7 @@ while loopi is True:
         username_ask = input("\u001b[37mUsername: ")
         print("\n ")
         print("(Your password will be encrypted after you make an account and until you want it to be decrypted)")
-        password_ask = getpass("Password: \u001b[0m")
+        password_ask = getpass("\u001b[0m")
         encrypted_username = pass_encryption(username_ask)
         encrypted_password = pass_encryption(password_ask)
         if user_list.get(username_ask) == password_ask:
