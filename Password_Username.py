@@ -1,5 +1,6 @@
 import time
 from getpass import getpass
+from os import system
 
 loopi = True
 
@@ -33,7 +34,6 @@ while loopi is True:
     Task_settings = False
     user_pass = False
     weak = True
-    x = 40*"\n"
 
     def change_password_l(juser):
         global password
@@ -128,18 +128,18 @@ while loopi is True:
             print("\u001b[31mUsername already taken\u001b[0m")
             repeat_acc = True
             time.sleep(2)
-            print(x)
+            system('clear')
         if username == password:
             user_pass = True
             print("\u001b[31mYour username and password cannot be the same\u001b[0m")
             time.sleep(2)
-            print(x)
+            system('clear')
         elif username != password:
             user_pass = False
         if password in user_list.values():
             print("\u001b[31mWeak password. Try a different one.\u001b[0m")
             time.sleep(2)
-            print(x)
+            system('clear')
             weak = False
         elif password not in user_list:
             weak = True
@@ -158,21 +158,21 @@ while loopi is True:
             encrypted_username = pass_encryption(username)
             encrypted_password = pass_encryption(password)
             back_security = True
-            print(x)
+            system('clear')
             print("Menu")
             print("---------------------------------------------------------")
             print("Settings\nSecurity\n\u001b[31mLOG OUT\u001b[0m")
             Taskl = input("What do you want to select? ")
             lowerTaskl = str(Taskl.lower())
             if lowerTaskl == "log out" or lowerTaskl == "logout":
-                print(x)
+                system('clear')
                 loop_signup = False
             elif lowerTaskl == "security":
                 security_start = True
                 while security_start is True:
                     back_security = True
                     loop_dec = False
-                    print(x)
+                    system('clear')
                     print("Security")
                     print("---------------------------------------------------------")
                     print("Encrypted Username: " + encrypted_username)
@@ -192,12 +192,12 @@ while loopi is True:
                             user_check_change = input("\u001b[37mUsername: ")
                             pass_check_change = getpass("Password: \u001b[0m")
                             if user_check_change in user_list and user_list.get(user_check_change) == pass_check_change:
-                                print(x)
+                                system('clear')
                                 password_new = input("\u001b[37mWhat would you like to change your password to? \u001b[0m")
                                 if password_new in user_list.values():
                                     print("\u001b[31mWeak password. Try a different one.\u001b[0m")
                                     time.sleep(2)
-                                    print(x)
+                                    system('clear')
                                 elif password_new not in user_list.values():
                                     change_password(user_list)
                                 encrypted_username = pass_encryption(username)
@@ -225,7 +225,7 @@ while loopi is True:
                 while loop_dec is True:
                     encrypted_username = pass_encryption(username)
                     encrypted_password = pass_encryption(password)
-                    print(x)
+                    system('clear')
                     print("\u001b[0mSecurity")
                     print("---------------------------------------------------------")
                     print("Username: " + username)
@@ -242,7 +242,7 @@ while loopi is True:
                         user_check_change = input("\u001b[37mUsername: ")
                         pass_check_change = getpass("Password: \u001b[0m")
                         if user_check_change in user_list and user_list.get(user_check_change) == pass_check_change:
-                            print(x)
+                            system('clear')
                             password_new = getpass("\u001b[37mWhat would you like to change your password to? \u001b[0m")
                             if password_new not in user_list.values():
                                 change_password(user_list)
@@ -250,7 +250,7 @@ while loopi is True:
                             elif password_new in user_list.values():
                                 print("\u001b[31mWeak password. Try a different one.\u001b[0m")
                                 time.sleep(2)
-                                print(x)
+                                system('clear')
 
                         else:
                             print("\u001b[31mWrong username or password\u001b[0m")
@@ -261,7 +261,7 @@ while loopi is True:
             elif lowerTaskl == "settings":
                 Task_settings = True
                 while Task_settings is True:
-                    print(x)
+                    system('clear')
                     print("\u001b[0mNothing here yet!\u001b[0m")
                     print("\u001b[31mBACK\u001b[0m")
                     Task_setting_task = input("\u001b[0mWhat do you want to select? \u001b[0m")
@@ -279,7 +279,7 @@ while loopi is True:
         print("\u001b[31mError: No user accounts have been made yet\u001b[0m")
         starter = False
         time.sleep(2)
-        print(x)
+        system('clear')
 
     elif starter is True and lowerloop_start == "login" or lowerloop_start == "log in" and bool(user_list) is True:
         starter = False
@@ -294,9 +294,9 @@ while loopi is True:
         else:
             print("\u001b[31mWrong username or password\u001b[0m")
             time.sleep(2)
-            print(x)
+            system('clear')
         while loop_login is True:
-            print(x)
+            system('clear')
             print("Menu")
             print("---------------------------------------------------------")
             print("Settings\nSecurity\n\u001b[31mLOG OUT\u001b[0m")
@@ -304,13 +304,13 @@ while loopi is True:
             lowerTask = str(Task.lower())
             print(lowerTask)
             if lowerTask == "log out" or lowerTask == "logout":
-                print(x)
+                system('clear')
                 loop_login = False
             elif lowerTask == "settings":
                 print("john likes pie:)))")
                 Task_settings = True
                 while Task_settings is True:
-                    print(x)
+                    system('clear')
                     print("\u001b[0mNothing here yet!\u001b[0m")
                     print("\u001b[31mBACK\u001b[0m")
                     Task_setting_task = input("\u001b[0mWhat do you want to select? \u001b[0m")
@@ -325,7 +325,7 @@ while loopi is True:
                 while security_start is True:
                     back_security = True
                     loop_dec = False
-                    print(x)
+                    system('clear')
                     print("Security")
                     print("---------------------------------------------------------")
                     print("Encrypted Username: " + encrypted_username)
@@ -345,7 +345,7 @@ while loopi is True:
                             user_check_change = input("\u001b[37mUsername: ")
                             pass_check_change = getpass("Password: \u001b[0m")
                             if user_check_change in user_list and user_list.get(user_check_change) == pass_check_change:
-                                print(x)
+                                system('clear')
                                 password_new = getpass("\u001b[37mWhat would you like to change your password to? \u001b[0m")
                                 if password_new not in user_list.values():
                                     change_password_l(user_list)
@@ -355,7 +355,7 @@ while loopi is True:
                                 elif password in user_list.values():
                                     print("\u001b[31mWeak password. Try a different one.\u001b[0m")
                                     time.sleep(2)
-                                    print(x)
+                                    system('clear')
                             else:
                                 print("\u001b[31mWrong username or password\u001b[0m")
                                 time.sleep(2)
@@ -377,7 +377,7 @@ while loopi is True:
                 while loop_dec is True:
                     encrypted_username = pass_encryption(username_ask)
                     encrypted_password = pass_encryption(password_ask)
-                    print(x)
+                    system('clear')
                     print("\u001b[0mSecurity")
                     print("---------------------------------------------------------")
                     print("Username: " + username)
@@ -394,12 +394,12 @@ while loopi is True:
                         user_check_change = input("\u001b[37mUsername: ")
                         pass_check_change = getpass("Password: \u001b[0m")
                         if user_check_change in user_list and user_list.get(user_check_change) == pass_check_change:
-                            print(x)
+                            system('clear')
                             password_new = getpass("\u001b[37mWhat would you like to change your password to? \u001b[0m")
                             if password_new in user_list.values():
                                 print("\u001b[31mWeak password. Try a different one.\u001b[0m")
                                 time.sleep(2)
-                                print(x)
+                                system('clear')
                             elif password_new not in user_list.values():
                                 change_password_l(user_list)
                                 password_ask = password_new
@@ -418,6 +418,6 @@ while loopi is True:
         error_message.strip()
         print(error_message)
         time.sleep(2)
-        print(x)
+        system('clear')
         i = True
         starter = False
